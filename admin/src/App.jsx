@@ -8,7 +8,7 @@ import List from './pages/List.jsx'
 import Login from './components/Login.jsx'
   import { ToastContainer } from 'react-toastify';
 
-export const backendUrl = import.meta.env.VITE_BACKEND_ULR || 'http://localhost:4000';
+export const backendUrl = import.meta.env.VITE_BACKEND_URL;
 
 const App = () => {
 
