@@ -7,7 +7,7 @@ import { useNavigate } from "react-router-dom";
 
 
 const ShopContextProvider = ({ children }) => {
-    const currency = "$";
+    const currency = "PKR";
     const delivery_fee = 10;
     const backendURL = import.meta.env.VITE_BACKEND_URL;
     const [search, setSearch] = useState('');

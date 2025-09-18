@@ -19,7 +19,7 @@ const App = () => {
     <>
     <ToastContainer/>
     <Navbar/>
-    <hr className='flex sticky z-10 md:top-20 top-19 px-7'/>
+    <hr className='flex sticky z-10 md:top-17 top-19 px-7'/>
     <SearchBar/>
     <div className='md:px-20 px-4 py-4'>
       <Routes>
