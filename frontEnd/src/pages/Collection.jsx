@@ -119,7 +119,7 @@ const Collection = () => {
         <div className='md:flex flex-col md:flex-row justify-between mt-3 ml-3 text-base mb-4 sm:text-2xl'>
           <Title text1={"ALL"} text2={"COLLECTION"} />
           {/* product sort */}
-          <select onChange={(e) => setSortType(e.target.value)} className='border cursor-pointer border-gray-400 mb-15 px-2 p-3 text-sm '>
+          <select onChange={(e) => setSortType(e.target.value)} className='border cursor-pointer border-gray-400 mb-15  mt-3 px-2 p-3 text-sm '>
             <option value="relevent">Sort by:relevent</option>
             <option value="low-high">Sort by : low-high</option>
             <option value="high-low">Sort by : high-low</option>
