@@ -6,7 +6,7 @@ import { ShopContext } from "../context/ShopContext.jsx";
 
 const Navbar = () => {
   const [visible, setVisible] = useState(false);
-  const [profileOpen, setProfileOpen] = useState(false);
+  const [profileOpen, setProfileOpen] = useState(false); // 👈 for mobile profile menu
   const { setShowSearch, getCartCount, token, setToken, navigate, setCartItem } =
     useContext(ShopContext);
 
@@ -18,11 +18,15 @@ const Navbar = () => {
   };
 
   const handleClick = () => {
-    window.scrollTo({ top: 0, behavior: "smooth" });
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
   };
 
   return (
     <div className="flex sticky z-110 top-0 md:px-7 px-4 justify-between py-5 font-medium bg-white shadow">
+      {/* Logo */}
       <Link to="/">
         <img
           onClick={handleClick}
@@ -32,6 +36,7 @@ const Navbar = () => {
         />
       </Link>
 
+      {/* Admin button (desktop only) */}
       <button
         onClick={() =>
           window.open("https://e-commerce-admin-seven-zeta.vercel.app/", "_blank")
@@ -41,6 +46,7 @@ const Navbar = () => {
         Admin Dashboard
       </button>
 
+      {/* Nav links (desktop only) */}
       <ul className="hidden md:flex gap-8">
         {[
           { path: "/", label: "Home" },
@@ -60,7 +66,9 @@ const Navbar = () => {
         ))}
       </ul>
 
+      {/* Right section */}
       <div className="flex gap-7 items-center mb-3">
+        {/* Search */}
         <Link to="/collection">
           <img
             onClick={() => {
@@ -73,11 +81,14 @@ const Navbar = () => {
           />
         </Link>
 
+        {/* Profile */}
         <div className="relative group">
+          {/* Profile icon */}
           <img
             onClick={() => {
               if (token) {
                 if (window.innerWidth < 768) {
+                  // 👈 Only toggle on mobile
                   setProfileOpen(!profileOpen);
                 } else {
                   handleClick();
@@ -92,8 +103,9 @@ const Navbar = () => {
             alt="profile"
           />
 
+          {/* Desktop hover menu */}
           {token && (
-            <div className="absolute right-0 mt-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition z-50">
+            <div className="hidden md:block absolute right-0 mt-2 opacity-0 group-hover:opacity-100 hover:opacity-100 transition z-50">
               <div className="flex flex-col w-32 p-2 rounded-md bg-slate-100 shadow-md">
                 <p className="text-zinc-600 hover:text-black cursor-pointer">
                   My Profile
@@ -114,6 +126,7 @@ const Navbar = () => {
             </div>
           )}
 
+          {/* Mobile click menu */}
           {token && profileOpen && (
             <div className="absolute right-0 mt-2 block md:hidden z-50">
               <div className="flex flex-col w-32 p-2 rounded-md bg-slate-100 shadow-md">
@@ -143,6 +156,7 @@ const Navbar = () => {
           )}
         </div>
 
+        {/* Cart */}
         <Link to="/cart" className="relative">
           <img className="w-5" src={assets.cart_icon} alt="cart" />
           <p className="absolute bottom-[-5px] right-[-5px] text-sm bg-black text-white rounded-full w-4 leading-4 text-center">
@@ -150,6 +164,7 @@ const Navbar = () => {
           </p>
         </Link>
 
+        {/* Mobile menu icon */}
         <img
           onClick={() => setVisible(true)}
           src={assets.menu_icon}
@@ -158,10 +173,10 @@ const Navbar = () => {
         />
       </div>
 
+      {/* Mobile sidebar menu */}
       <div
-        className={`top-0 bottom-0 md:hidden right-0 h-screen absolute bg-slate-100 transition-all overflow-hidden ${
-          visible ? "w-full" : "w-0"
-        }`}
+        className={`top-0 bottom-0 md:hidden right-0 h-screen absolute bg-slate-100 transition-all overflow-hidden ${visible ? "w-full" : "w-0"
+          }`}
       >
         <div onClick={() => setVisible(false)} className="flex gap-4 mt-2">
           <RxCross1 className="w-10 text-3xl mt-3 ml-2 font-medium cursor-pointer" />
