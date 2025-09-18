@@ -23,7 +23,7 @@ const ProductItems = ({id,price,name,image}) => {
 
       </div>
       <p className='mt-4'>{name}</p>
-      <p className='text-sm text-gray-900'>{currency}::{price}</p>
+      <p className='text-sm text-gray-900'>{currency}{price}</p>
     </Link>
   )
 }

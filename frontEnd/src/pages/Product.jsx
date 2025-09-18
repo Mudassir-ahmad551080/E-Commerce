@@ -51,7 +51,7 @@ const Product = () => {
             <img src={assets.star_dull_icon} className='w-3 5' alt="" />
             <p className='pl-2'>(122)</p>
           </div>
-          <p className='mt-4  text-2xl'>{currency}::{productData.price}</p>
+          <p className='mt-4  text-2xl'>{currency}{productData.price}</p>
           <p className='mt-3 text-gray-600 w-4/5'>{productData.description}</p>
           <div className='mt-5 '>
             <p>Select Size</p>
