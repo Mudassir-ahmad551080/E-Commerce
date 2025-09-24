@@ -12,8 +12,9 @@ const Home = () => {
   // ✅ Show loading until products are fetched
   if (!products || products.length === 0) {
     return (
-      <div className="flex justify-center items-center h-[80vh]">
-        <p className="text-xl font-semibold animate-pulse">Loading...</p>
+       <div className='min-h-screen justify-center flex items-center'>
+        <div className='w-20 h-20 border border-4 border-gray-400 border-t-4 border-t-blue-400 rounded-full animate-spin'>
+        </div>
       </div>
     );
   }
