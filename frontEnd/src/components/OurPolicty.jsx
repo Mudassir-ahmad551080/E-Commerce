@@ -7,7 +7,7 @@ const OurPolicy = () => {
       
       {/* Single Policy Item */}
       <div className="flex flex-col items-center text-center max-w-xs md:max-w-sm">
-        <img src={assets.exchange_icon} alt="Exchange Policy" className="w-16 h-16 mb-4" />
+        <img src={assets.exchange_icon} alt="Exchange Policy" className="w-16 animate-spin h-16 mb-4" />
         <h3 className="font-semibold text-lg md:text-xl mb-1 text-gray-800">Easy Exchange Policy</h3>
         <p className="text-gray-600 text-sm md:text-base">
           We offer free exchange policy for your convenience.
@@ -15,7 +15,7 @@ const OurPolicy = () => {
       </div>
 
       <div className="flex flex-col items-center text-center max-w-xs md:max-w-sm">
-        <img src={assets.quality_icon} alt="Return Policy" className="w-16 h-16 mb-4" />
+        <img src={assets.quality_icon} alt="Return Policy" className="w-16  h-16 mb-4" />
         <h3 className="font-semibold text-lg md:text-xl mb-1 text-gray-800">7 Days Return Policy</h3>
         <p className="text-gray-600 text-sm md:text-base">
           We provide a 7-day return policy for all products.
