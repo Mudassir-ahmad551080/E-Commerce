@@ -71,7 +71,7 @@ const List = ({ token }) => {
       {loading ? (
         // 👇 Loading state
         <div className='h-[200px] justify-center flex items-center'>
-        <div className='w-20 h-20 border border-4 border-gray-400 border-t-4 border-t-blue-400 rounded-full animate-spin'>
+        <div className='w-20 h-20 border border-4 border-gray-400 border-t-4 border-t-green-400 rounded-full animate-spin'>
         </div>
       </div>
       ) : list.length === 0 ? (

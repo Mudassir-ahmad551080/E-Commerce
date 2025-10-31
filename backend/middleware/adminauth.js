@@ -1,7 +1,6 @@
 import jwt from 'jsonwebtoken';
 // admin auth middleware
 
-
 const adminAuth = (req,res,next) =>{
     try {
         const {token} = req.headers

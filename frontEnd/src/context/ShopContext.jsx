@@ -15,12 +15,7 @@ const ShopContextProvider = ({ children }) => {
     const [products,setProducts] = useState([]);
     const [token,setToken] = useState('');
     const navigate = useNavigate();
-
-
-   
-
-
-
+    
     // Load initial cart from localStorage or empty object
     const [cartItem, setCartItem] = useState(() => {
         try {
