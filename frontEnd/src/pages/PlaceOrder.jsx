@@ -56,10 +56,10 @@ const PlaceOrder = () => {
 
       switch (method) {
         case 'cod':
-          const response = await axios.put(
+          const response = await axios.post(
             backendURL + '/api/order/place',
             orderData,
-            { headers: {  } }
+            { headers: { token } }
           )
           if (response.data.success) {
             setCartItem({})
